@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra câu hỏi trùng lặp</title>
+    <style>
+        body {
+            font-family:'Times New Roman', Times, serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+
+        h2 {
+            text-align: center;
+            color: #327fbe;
+            margin-bottom: 30px;
+        }
+
+        button {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #052d57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            display: block;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button:hover {
+            background-color: #054080;
+        }
+
+        input[type="file"] {
+            font-family:'Times New Roman', Times, serif;
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+            width: 60%;
+            max-width: 200px;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .error {
+            text-align: center;
+            color: rgb(255, 18, 18);
+            font-weight: bold;
+            margin: 20px auto;
+            padding: 10px;
+            width: 60%;
+            max-width: 400px;
+            background-color: #fff5f6;
+            border: 1px solid #f5a7af;
+            border-radius: 5px;
+        }
+
+        .duplicate {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .question-short {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-left: 5px solid #ffc107;
+            margin: 5px;
+            font-style: italic;
+        }
+
+        .question-full {
+            background-color: #d1ecf1;
+            padding: 10px;
+            border-left: 5px solid #007bff;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background-color: #ffff99;
+        }
+
+        .result p {
+            font-size: 18px;
+        }
+
+        .duplicate-item {
+            padding: 5px;
+            background-color: #f0f8ff;
+            border: 1px solid #007bff;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .duplicate-item strong {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Kiểm tra câu hỏi trùng lặp trong tệp</h1>
+    <h2>.txt, .docx, .xlsx, .pdf</h2>
+    <input type="file" id="fileInput" accept=".txt, .docx, .xlsx, .pdf">
+    <button onclick="checkDuplicate()">Kiểm tra</button>
+
+    <div class="result" id="result"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
